@@ -1,4 +1,5 @@
 import tkinter as tk
+import requests
 
 def Philosopher_Name():
 
@@ -35,6 +36,16 @@ label_output.pack()
 root.mainloop()
 
 
+def get_philosophers_info():
+  topic = input("Enter topic: ")
+  url = f"http://philosophyapi.pythonanywhere.com/api/ideas/?search={topic}"
+  response = requests.get(url)
+  print(response)
+  data = response.json()
+  for i in range(len(data)-1):
+    print(data["results"][i]["author"])
+    print(data["results"][i]["quote"])
+      
 # Create the main application window
 
 # root = tk.Tk()

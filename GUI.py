@@ -6,7 +6,7 @@ def Philosopher_Name():
 
     label_output.config(text=f"Hello, {name}!")
 
-    label_output.place(x=)
+    label_output.place(x=325, y=300)
 
 
 root = tk.Tk()
